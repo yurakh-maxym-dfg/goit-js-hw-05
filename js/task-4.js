@@ -1,22 +1,9 @@
 'use strict';
 
 const getTotalBalanceByGender = (users, gender) => {
-    if (gender === 'male') {
-        const totalMale = users
-            .filter(user => user.gender === 'male')
-            .reduce((total, user) => {
-                return total + user.balance;
-            }, 0);
-            return totalMale;
-        }
-    else {
-        const totalFemale = users
-            .filter(user => user.gender === 'female')
-            .reduce((total, user) => {
-                return total + user.balance;
-            }, 0);
-            return totalFemale;
-    };
+    return users
+        .filter(user => user.gender === gender)
+        .reduce((total, user) => total + user.balance, 0);
 };
 
 const clients = [
